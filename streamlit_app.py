@@ -50,7 +50,7 @@ streamlit.dataframe(my_data_rows)
 add_my_fruit =  streamlit.text_input('What fruit would you like to add?')
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 streamlit.write('The user entered ', add_my_fruit)
-my_data_rows.add(add_my_fruit)
+my_data_rows.append(add_my_fruit)
 
 
 
