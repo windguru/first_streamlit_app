@@ -50,4 +50,4 @@ add_my_fruit = streamlit.multiselect("Pick some fruits:", list(my_data_rows))
 fruits_to_show = add_my_fruit
 
 streamlit.header("The Fruit Load List contains:")
-streamlit.dataframe(fruits_to_show)
+streamlit.dataframe(my_data_rows)
