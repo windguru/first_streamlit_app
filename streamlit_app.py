@@ -43,11 +43,13 @@ my_cur = my_cnx.cursor()
 
 my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
 my_data_rows = my_cur.fetchall()
-#my_data_rows = my_data_rows.set_index('name')
-
-
-add_my_fruit = streamlit.multiselect("Pick some fruits:", list(my_data_rows))
-fruits_to_show = add_my_fruit
 
 streamlit.header("The Fruit Load List contains:")
 streamlit.dataframe(my_data_rows)
+
+add_my_fruit =  streamlit.text_input('What fruit would you like to add?')
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
+streamlit.write('The user entered ', add_my_fruit)
+
+
+
